@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>tab</title>
+<style>
+/* css reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0}fieldset,img{border:0}:focus{outline:0}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:normal;font-weight:normal}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}abbr,acronym{border:0;font-variant:normal}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit}code,kbd,samp,tt{font-size:100%}input,button,textarea,select{*font-size:100%}ol,ul{list-style:none}table{border-collapse:collapse;border-spacing:0}caption,th{text-align:left}sup,sub{font-size:100%;vertical-align:baseline}:link,:visited,ins{text-decoration:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
+body{font: 12px/1.5 tahoma,arial,\5b8b\4f53; background: #fff;}
+.wp,.wrap,.wraper { width:980px; margin:0 auto;}
+img { vertical-align: top;}
+.clear-fix:after,.clear-fix:before,.cf:after,.cf:before{content:"";display:table;}
+.clear-fix:after,.cf:after{clear:both;}
+.clear-fix,.cf{*zoom:1;}
+
+
+/* index slide */
+.index_slide{float:left;width:744px;height:315px;margin:5px 10px 10px 5px;_margin-bottom:5px}
+.index_slide .box{float:left;overflow:hidden;width:365px;height:290px;;padding:10px;border:1px solid #d1d1d1}
+.index_slide .box .show{position:relative;display:none;zoom:1;height:290px}
+.index_slide .box .show img{width:365px;height:200px}
+.index_slide .box .show h3{border-bottom:1px dashed #d1d1d1}
+.index_slide .box .show h3 a{font-size:16px;line-height:2.2}
+.index_slide .box .show li{line-height:1.8}
+.index_slide .box .show li em{color:#888;margin-right:3px}
+.index_slide .box .show .more{position:absolute;right:0;bottom:0}
+
+.index_slide ul.nav{float:right;width:355px}
+.index_slide ul.nav li{height:60px;background:url(20110320sprite.gif) 0 -75px no-repeat;margin-bottom:8px;padding:6px 6px 6px 14px}
+.index_slide ul.nav li.cur{background-position:0 0}
+.index_slide ul.nav li img{display:block;float:left;clear:both;width:108px;height:60px;margin-right:5px}
+.index_slide ul.nav li h3{line-height:2}
+
+
+.settab{float:right;width:310px}
+.settab h2{background:#a40000;font-size:12px; color:#fff;text-align:center; ;line-height:25px;margin:10px 0 10px}
+ul.tabnav{width:300px;height:25px;margin-left:20px}
+ul.tabnav li{background:#baf;color:#fff;line-height:25px;display:block;float:left;margin:0 10px;padding:0 5px;cursor:pointer}
+ul.tabnav li.hover{background:#047}
+.tabbox{width:300px;height:100%;border:2px solid #047}
+.tabbox div{display:none;margin:10px;line-height:20px}
+
+fieldset{border:1px dashed #ccc;padding: 20px;margin: 20px;}
+</style>
+</head>
+<body>
+<!--DEMO start-->
+<!-- 普通的选项卡 -->
+<fieldset>
+  <legend>普通的选项卡</legend>
+  <ul class="tabnav" id="J_setTabANav">
+			<li>中国馆</li>
+			<li>美国馆</li>
+			<li>韩国馆</li>
+		</ul>
+		<div class="tabbox" id="J_setTabABox">
+			<div style="display:block"><img src="http://cdn.bang5mai.com/upload/web/cmsphp/link/201312/5a8f17d7a16715181924.png" alt=""></div>
+			<div><img src="http://cdn.bang5mai.com/upload/web/cmsphp/link/201312/71de82340f21921273134.jpg" alt=""></div>
+			<div><img src="http://cdn.bang5mai.com/upload/web/cmsphp/link/201312/d5de2abd37479242729.png" alt=""></div>
+		</div>
+</fieldset>
+
+<!-- 自动切换的选项卡 -->
+<fieldset>
+  <legend>自动切换的选项卡</legend>
+  <ul class="tabnav" id="J_setTabBNav">
+			<li>中国馆</li>
+			<li>美国馆</li>
+			<li>韩国馆</li>
+		</ul>
+		<div class="tabbox" id="J_setTabBBox">
+			<div style="display:block"><img src="http://cdn.bang5mai.com/upload/web/cmsphp/link/201312/5a8f17d7a16715181924.png" alt=""></div>
+			<div><img src="http://cdn.bang5mai.com/upload/web/cmsphp/link/201312/71de82340f21921273134.jpg" alt=""></div>
+			<div><img src="http://cdn.bang5mai.com/upload/web/cmsphp/link/201312/d5de2abd37479242729.png" alt=""></div>
+		</div>
+</fieldset>
+
+<!-- 自动切换的选项卡 -->
+<fieldset>
+  <legend>自动切换的选项卡</legend>
+  <div class="index_slide" id="J_indexSlide">
+		<div class="box" id="J_indexSlideBox">
+			<div class="show" style="display:block">
+				<a href="#"><img src="http://cdn.bang5mai.com/upload/web/cmsphp/mslider/201312/d6f81f8a874819232732.jpg" alt="调用右侧对应标题" title="调用右侧对应标题" /></a>
+				<h3><a href="#"> 美国馆开发需求</a></h3>
+				<ul class="mt10">
+					<li><em>【美国】</em><a href="#">美国馆开发需求</a></li>
+					<li><em>【韩国】</em><a href="#">美国馆开发需求</a></li>
+				</ul>
+				<div class="more"><a href="#" title="更多攻略...">&raquo;&nbsp;更多</a></div>
+			</div>
+			<div class="show">
+				<a href="#"><img src="http://cdn.bang5mai.com/upload/web/cmsphp/mslider/201312/6ee576b7362712151823.jpg" alt="调用右侧对应标题" title="调用右侧对应标题" /></a>
+				<h3><a href="#">美国馆开发需求</a></h3>
+				<ul class="mt10">
+					<li><em>【美国】</em><a href="#">美国馆开发需求</a></li>
+					<li><em>【韩国】</em><a href="#">美国馆开发需求</a></li>
+				</ul>
+				<div class="more"><a href="#" title="更多攻略...">&raquo;&nbsp;更多</a></div>
+			</div>
+			<div class="show">
+				<a href="#"><img src="http://cdn.bang5mai.com/upload/web/cmsphp/mslider/201312/9a639ca5a8111418212232.jpg" alt="调用右侧对应标题" title="调用右侧对应标题" /></a>
+				<h3><a href="#">美国馆开发需求</a></h3>
+				<ul class="mt10">
+					<li><em>【美国】</em><a href="#">美国馆开发需求</a></li>
+					<li><em>【韩国】</em><a href="#">美国馆开发需求</a></li>
+				</ul>
+				<div class="more"><a href="#" title="更多攻略...">&raquo;&nbsp;更多</a></div>
+			</div>
+			<div class="show">
+				<a href="#"><img src="http://cdn.bang5mai.com/upload/web/cmsphp/mslider/201312/9a639ca5a8111418212232.jpg" alt="调用右侧对应标题" title="调用右侧对应标题" /></a>
+				<h3><a href="#">美国馆开发需求</a></h3>
+				<ul class="mt10">
+					<li><em>【美国】</em><a href="#">美国馆开发需求</a></li>
+					<li><em>【韩国】</em><a href="#">美国馆开发需求</a></li>
+				</ul>
+				<div class="more"><a href="#" title="更多攻略...">&raquo;&nbsp;更多</a></div>
+			</div>
+		</div>
+		<ul class="nav" id="J_indexSlideNav">
+			<li>
+				<a href="#"><img src="http://cdn.bang5mai.com/upload/web/cmsphp/mslider/201312/9a639ca5a8111418212232.jpg" alt="调用下面右侧标题" title="调用右侧对应标题" /></a>
+				<h3><a href="#">美国馆开发需求</a></h3>
+				<p>美国馆开发需求...</p>
+			</li>
+			<li>
+				<a href="#"><img src="http://cdn.bang5mai.com/upload/web/cmsphp/mslider/201312/9a639ca5a8111418212232.jpg" alt="调用下面右侧标题" title="调用右侧对应标题" /></a>
+				<h3><a href="#">美国馆开发需求</a></h3>
+				<p>美国馆开发需求</p>
+			</li>
+			<li>
+				<a href="#"><img src="http://cdn.bang5mai.com/upload/web/cmsphp/mslider/201312/9a639ca5a8111418212232.jpg" alt="调用下面右侧标题" title="调用右侧对应标题" /></a>
+				<h3><a href="#">美国馆开发需求</a></h3>
+				<p>美国馆开发需求</p>
+			</li>
+			<li>
+				<a href="#"><img src="http://cdn.bang5mai.com/upload/web/cmsphp/mslider/201312/9a639ca5a8111418212232.jpg" alt="调用下面右侧标题" title="调用右侧对应标题" /></a>
+				<h3><a href="#">美国馆开发需求</a></h3>
+				<p>美国馆开发需求</p>
+			</li>
+		</ul>
+	</div>
+</fieldset>
+
+
+
+<!--DEMO end-->
+<script type="text/javascript" src="http://staticcdn.b5m.com/static/scripts/common/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="tab.js"></script>
+<script>
+//使用方法
+$(function(){
+	//幻灯效果
+	$(document).b5mTab({
+		tabbox:$('ul#J_indexSlideNav>li'),
+		tabcon:$('div#J_indexSlideBox>div.show'),
+		autoplay: true,
+		crosstime:120,
+		outtime:200,
+		autotime:4000,
+		intime:300
+	});
+	//普通选项卡
+	$(document).b5mTab({
+		tabbox:$('#J_setTabANav>li'),
+		tabcon:$('#J_setTabABox>div'),
+		tabhover:'hover'
+	});
+	//普通选项卡
+	$(document).b5mTab({
+		tabbox:$('#J_setTabBNav>li'),
+		tabcon:$('#J_setTabBBox>div'),
+		autoplay:true,
+		tabhover:'hover'
+	});
+});
+</script>
+
+</body>
+</html>
